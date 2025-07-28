@@ -1,0 +1,21 @@
+.omr-header-rotated {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  width: 60px;      /* কম width দিন */
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.omr-rotated-text {
+  transform: rotate(90deg);
+  transform-origin: left top;
+  font-size: 10px;
+  font-weight: bold;
+  color: #222;
+  text-align: left;
+  white-space: pre-line;
+  line-height: 1;
+}

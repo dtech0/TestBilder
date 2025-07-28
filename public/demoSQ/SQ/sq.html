@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CQ</title>
+<style>
+  /* Base styles for screen */
+  body {
+    width: 148mm;       /* A5 width */
+    height: 210mm;      /* A5 height */
+    margin: 0 auto;     /* Center on screen */
+    padding: 0;
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+  }
+  
+  .parent {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(60, 1fr);
+    gap: 0;
+  }
+  
+  .headerPage1 {
+    grid-row: 1 / 13;
+    padding: 30px 30px 5px 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+  }
+  
+  .headerPage2 {
+    grid-row: 1 / 6;
+    padding: 30px 30px 5px 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+  }
+  
+  .qPage1 {
+    grid-row: 13 / 60;
+    padding: 10px 30px 20px 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .qPage2 {
+    grid-row: 6 / 60;
+    padding: 10px 30px 20px 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* Print-specific styles */
+  @media print {
+    @page {
+      size: A5;
+      margin: 0;
+    }
+    
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    
+    .parent {
+      page-break-after: always;
+      height: 210mm; /* Explicit A5 height */
+    }
+    
+    .parent:last-child {
+      page-break-after: avoid;
+    }
+    
+    /* Ensure headers and content stay on their pages */
+    .headerPage1, .headerPage2, .qPage1, .qPage2 {
+      break-inside: avoid;
+    }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="data.js"></script> 
+</head>
+<body>
+  <script src="script.js"></script>
+</body>
+</html>

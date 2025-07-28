@@ -1,9 +1,11 @@
+
+
+
 {
   "version": 2,
   "buildCommand": "npm install --legacy-peer-deps && npm run build",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "rootDirectory": "TestBilder",
   "functions": {
     "app/api/**/*.ts": {
       "maxDuration": 30

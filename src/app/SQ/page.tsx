@@ -29,10 +29,15 @@
 // }
 
 
-import dynamic from "next/dynamic"
 
-const IframeSQ = dynamic(() => import('./IframeSQ'), { ssr: false })
+'use client';
 
-export default function SQPage() {
-  return <IframeSQ />
+import dynamic from 'next/dynamic';
+
+const IframeSQ  = dynamic(() => import('./IframeSQ'), {
+  ssr: false,
+});
+
+export default function IframeSQWrapper() {
+  return <IframeSQ  />;
 }

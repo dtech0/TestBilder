@@ -36,10 +36,16 @@
 //   )
 // }
 
-import dynamic from "next/dynamic"
 
-const IframeMCQ = dynamic(() => import('./IframeMCQ'), { ssr: false })
 
-export default function MCQPage() {
-  return <IframeMCQ />
+'use client';
+
+import dynamic from 'next/dynamic';
+
+const IframeMCQ  = dynamic(() => import('./IframeMCQ'), {
+  ssr: false,
+});
+
+export default function IframeMCQWrapper() {
+  return <IframeMCQ  />;
 }

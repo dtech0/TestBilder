@@ -35,10 +35,15 @@
 //   )
 // }
 
-import dynamic from "next/dynamic"
+'use client';
 
-const IframeCQ = dynamic(() => import('./IframeCQ'), { ssr: false })
+import dynamic from 'next/dynamic';
 
-export default function CQPage() {
-  return <IframeCQ />
+const IframeCQ = dynamic(() => import('./IframeCQ'), {
+  ssr: false,
+});
+
+export default function IframeCQWrapper() {
+  return <IframeCQ />;
 }
+

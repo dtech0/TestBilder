@@ -403,3 +403,15 @@ const Mcq = () => {
 }
 
 export default Mcq
+
+
+
+// 'use client'
+
+// import dynamic from 'next/dynamic'
+
+// const CQClient = dynamic(() => import('./MCQClient'), { ssr: false })
+
+// export default function CQWrapper() {
+//   return <CQClient />
+// }

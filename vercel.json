@@ -1,6 +1,3 @@
-
-
-
 {
   "version": 2,
   "buildCommand": "npm install --legacy-peer-deps && npm run build",
@@ -17,24 +14,14 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "routes": [
-    {
-      "src": "/Api/(.*)",
-      "dest": "/Api/$1"
-    },
-    {
-      "src": "/Api/(.*)",
-      "dest": "/Api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "rewrites": [
     {
       "source": "/uploads/(.*)",
       "destination": "/Api/uploads/$1"
+    },
+    {
+      "source": "/Api/(.*)",
+      "destination": "/Api/$1"
     }
   ]
 }

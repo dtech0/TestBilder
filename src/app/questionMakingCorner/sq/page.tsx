@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, useCallback } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { SqTemplet, DelBtnSQ } from "@/components/ui/sqTemplet"
 import debounce from "lodash/debounce"
+import { Suspense } from "react"
 
 interface SQQuestion {
   id: string
@@ -17,7 +18,7 @@ interface SQQuestion {
   isComplete: boolean
 }
 
-const SQ = () => {
+const SQcontent = () => {
   const [sqTemplet, setSqTemplet] = useState<SQQuestion[]>([])
   const [sqTempletName, setSqTempletName] = useState<string>("sq-1")
   const [userId, setUserId] = useState<string | null>(null)
@@ -333,4 +334,10 @@ const SQ = () => {
   )
 }
 
-export default SQ
+export default function SQ() {
+  return (
+    <Suspense fallback={<div className="text-center mt-20 text-lg text-gray-700">Loading page...</div>}>
+      <SQcontent />
+    </Suspense>
+  )
+}

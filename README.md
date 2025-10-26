@@ -42,5 +42,20 @@ To run locally:
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
+```
+
+### Run Using Docker
+- **Build Image:**
+```bash
+docker build -t myapp .
+```
+- **Run Container from the Image:**
+```bash
+docker run -p 3000:3000 myapp
+```
+
+### Run Manually
+```bash
 npm install
 npm run dev
+```
